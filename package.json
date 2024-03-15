@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsc && node dist/index.js",
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.11.28",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
     "typescript": "^5.4.2"
   }
 }
